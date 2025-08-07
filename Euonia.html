@@ -6,29 +6,123 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap">
+        <link rel="stylesheet" href="file:///Users/prisha_bhandari/css/style.css">
     </head>
 <body style="background-color:#feffee;">
     <div class="LOGODIV">
         <h1 style=margin:0;><i><b>Euonia</b></i></h1>
     </div>
-    <button class="WEEKLYDIV">WEEKLY</button>
-    <button class="MONTHLYDIV">MONTHLY</button>
-    <div class="CALENDARDIV">
-        <table style="width: 1100px; table-layout: fixed;">
-            <tr>
-                <th style="width: 14%;">Monday</th>
-                <th style="width: 150px;">Tuesday</th>
-                <th>Wednesday</th>
-                <th>Thursday</th>
-                <th>Friday</th>
-                <th>Saturday</th>
-                <th>Sunday</th>
-            </tr>
-        </table>
+    <div class="LOGOIMGDIV">
+        <img
+        src="file:///Users/prisha_bhandari/Desktop/Logo.png"
+        width="85"
+        height="85"
+        />
     </div>
-    <button class="FREEDIV">FREE</button>
-    <button class="BUSYDIV">BUSY</button>
+    
+    <table style="width: 1096px; table-layout: fixed; margin-left: 353px; margin-top: 50px; border-collapse: collapse; color:#1a3827; background-color: #1a3827;">
+        
+        <tr>
+            <th class="MONTHNAMEDIV" style="width:1000px; color:#feffee">October 2025
+            <button id="weeklyBtn" class="WEEKLYDIV active-weekly">WEEKLY</button>
+            <button id="monthlyBtn" class="MONTHLYDIV inactive-green">MONTHLY</button>
+            <img id="monthlyImage" src="file:///Users/prisha_bhandari/Desktop/MONTHLY.png" style="position: absolute; display:none; margin-left:-10px;margin-top:-65px; height:629.5px;width:1094px;object-fit: cover; z-index: 9999; pointer-events: none;">
+
+        </th>
+        <script>
+            function setActive(type) {
+                const weekly = document.getElementById("weeklyBtn");
+                const monthly = document.getElementById("monthlyBtn");
+                const image = document.getElementById("monthlyImage");
+            
+                if (type === "weekly") {
+                    // Color swap
+                    weekly.classList.add("active-weekly");
+                    weekly.classList.remove("inactive-green");
+                    monthly.classList.add("inactive-green");
+                    monthly.classList.remove("active-monthly");
+            
+                    // Hide image when WEEKLY is clicked
+                    image.style.display = "none";
+                } else {
+                    // Color swap
+                    monthly.classList.add("active-monthly");
+                    monthly.classList.remove("inactive-green");
+                    weekly.classList.add("inactive-green");
+                    weekly.classList.remove("active-weekly");
+            
+                    // Show image when MONTHLY is clicked
+                    image.style.display = "block";
+                }
+            }
+            
+            document.getElementById("weeklyBtn").onclick = () => setActive("weekly");
+            document.getElementById("monthlyBtn").onclick = () => setActive("monthly");
+        </script>
+                                       
+        </tr>
+    </table>
+    <table style="height:80px ;width: 1096px; table-layout: fixed; margin-left: 353px; margin-top: -1px; border-collapse: collapse;">
+        <tr>
+            <th style="width:50px ;left:12px">29</th>
+            <th style="text-align: center;">Monday</th>
+        </tr>
+    </table>
+    <table style="height:80px ;width: 1096px; table-layout: fixed; margin-left: 353px; margin-top: -1px; border-collapse: collapse; background-color:#c2e4f4">
+        <tr>
+            <th style="width:50px ;left:12px">30</th>
+            <th style="text-align: center; width:120px;">Tuesday</th>
+            <th style> Dentist Appointment, 5-6pm</th>
+            <th style> Math Tution, 7-8:30pm</th>
+        </tr>
+    </table>
+    <table style="height:80px ;width: 1096px; table-layout: fixed; margin-left: 353px; margin-top: -1px; border-collapse: collapse;">
+        <tr>
+            <th style="width:50px ;left:12px">1</th>
+            <th style="text-align: center;">Wednesday</th>
+        </tr>
+    </table>
+    <table style="height:80px ;width: 1096px; table-layout: fixed; margin-left: 353px; margin-top: -1px; border-collapse: collapse;">
+        <tr>
+            <th style="width:50px ;left:12px">2</th>
+            <th style="width:120px;">Thursday</th>
+            <th style> ❗Upload Full Report Draft to Program Manager❗9pm</th>
+        </tr>
+    </table>
+    <table style="height:80px ;width: 1096px; table-layout: fixed; margin-left: 353px; margin-top: -1px; border-collapse: collapse;">
+        <tr>
+            <th style="width:50px ;left:12px">3</th>
+            <th style="text-align: center;">Friday</th>
+        </tr>
+    </table>
+    <table style="height:80px ;width: 1096px; table-layout: fixed; margin-left: 353px; margin-top: -1px; border-collapse: collapse;">
+        <tr>
+            <th style="width:50px ;left:12px">4</th>
+            <th style="text-align: center;">Saturday</th>
+        </tr>
+    </table>
+    <table style="height:80px ;width: 1096px; table-layout: fixed; margin-left: 353px; margin-top: -1px; border-collapse: collapse;">
+        <tr>
+            <th style="width:50px ;left:12px">5</th>
+            <th style="text-align: center;">Sunday</th>
+        </tr>
+    </table>
+    <button class="FREEDIV" style="color:#feffee">FREE</button>
+    <button class="BUSYDIV" style="color:#feffee;">BUSY</button>
     </div>  
-    <div class="vl"></div>
+    <div class="l1"></div>
+    <div class="circle-outline" style="left: 379px; top: 331px;"></div>
+    <div class="scheduleDIV"></div>
+    <div class="routine">
+        <p style="margin:0;">Schedule:~</p>
+        <p style="margin:0;">1.) Dentist Appointment, 5-6pm</p>
+        <p style="margin:0;">2.) Math Tution, 7-8:30pm</p>
+    </div>
+    <div class="priority1">
+        <p style="margin:0;">- LOW</p>
+    </div>
+    <div class="priority2">
+        <p style="margin:0;">- HIGH</p>
+    </div>
 </body>
 </html>

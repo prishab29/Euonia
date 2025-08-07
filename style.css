@@ -2,18 +2,20 @@ style
     table {
         border-collapse: collapse;
         margin-top: 20px;
-        margin-left: 1350px;
     }
 
     th,td {
-        border: 1px solid black;
+        border-collapse: collapse;
         padding: 10px;
         font-size: 20px;
         font-family: "Coming Soon", cursive;
-        text-align: center;
+        text-align: left;
+        border: 1px solid rgb(99, 99, 99);
+        position: relative;
     }
     .LOGODIV 
     {
+        
         margin-top: 10px;
         margin-left: 10px;
         color:#1a3827;
@@ -22,37 +24,148 @@ style
     }
     .FREEDIV
     {
-        margin-top:497px;
-        margin-left: 30px;
+        position:absolute;
+        top:733px;
+        margin-left: 40px;
         font-size: 30px;
         font-family: "Hi Melody", sans-serif;
+        border-radius: 25px;
+        background: #1a3827; 
+        width: 115px;
+        height: 40px;
+        border-style: none;
     }
     .BUSYDIV
     {
-        margin-top:497px;
-        margin-left: 30px;
+        position:absolute;
+        top:733px;
+        margin-left: 180px;
         font-size: 30px;
         font-family: "Hi Melody", sans-serif;
+        border-radius: 30px;
+        background: #1a3827; 
+        width: 115px;
+        height: 40px;
+        border-style: none;
     }
-    .WEEKLYDIV
-    {
-        margin-top: 40px;
-        margin-left: 1200px;
-        font-size: 30px;
+    .WEEKLYDIV, .MONTHLYDIV {
+        position: relative;
+        left: 655px;
+        top: -5px;
+        font-size: 25px;
         font-family: "Hi Melody", sans-serif;
+        border-radius: 25px;
+        width: 102px;
+        height: 40px;
+        border-style: none;
+        cursor: pointer;
+        transition: 0.3s;
+    }    
+    /* Default state: WEEKLY white, MONTHLY green */
+    .WEEKLYDIV {
+        background: #feffee;   /* white */
+        color: #1a3827;        /* green text */
     }
-    .MONTHLYDIV
-    {
-        margin-top: 40px;
-        margin-left: 17px;
-        font-size: 30px;
-        font-family: "Hi Melody", sans-serif;
+    .MONTHLYDIV {
+        background: #1a3827;   /* green */
+        color: #feffee;        /* white text */
     }
-    .vl 
+    
+    /* Active state swaps colors */
+    .active-weekly {
+        background: #feffee !important;
+        color: #1a3827 !important;
+    }
+    .active-monthly {
+        background: #feffee !important;
+        color: #1a3827 !important;
+    }
+    .inactive-green {
+        background: #1a3827 !important;
+        color: #feffee !important;
+        border: 2px, solid #feffee;
+    }        
+    .l1 
     {
-        border-left: 2px solid #1a3827;
+        border: 1px solid #1a3827;
         height: 795px;
         position: absolute;
-        left: 345px; /* adjust this value based on where you want it */
+        left: 345px;
         top: 0px
+    }
+    .LOGOIMGDIV
+    {
+        margin-top: -75px;
+        margin-left: 220px;
+    }
+    .thdiv 
+    {
+        position: relative;
+        left: 10px;
+        color: #1a3827;
+    }
+    .MONTHNAMEDIV
+    {
+        font-family: "Hi Melody", sans-serif;
+        font-size: 43px;
+        color: #1a3827;  
+    }
+    .l2
+    {
+        position: absolute;
+        border: 1px solid #1a3827;
+        width: 156px;
+    }
+    .circle-outline
+    { 
+        position: absolute;
+        border: 1px solid #feffee;;
+        width: 30px; /* Set equal width and height for a perfect circle */
+        height: 30px;
+        border-radius: 50%;
+    }
+    .scheduleDIV
+    {
+        position:absolute;
+        width: 1094px;
+        height: 136px;
+        border: 1px solid;
+        background-color: #1a3b27;
+        top:15px;
+        left:361px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    .routine
+    {
+        position: absolute;
+        top:20px;
+        left:370px;
+        font-family: "Coming Soon", cursive;
+        font-size: 28px;
+        font-style: italic;
+        color: #feffee;
+    }
+    .priority1
+    {
+        position: absolute;
+        top:65px;
+        left:780px;
+        font-family: "Coming Soon", cursive;
+        font-size: 28px;
+        font-style: italic;
+        color: #56eb74;
+    }
+    .priority2
+    {
+        position: absolute;
+        top:107px;
+        left:708px;
+        font-family: "Coming Soon", cursive;
+        font-size: 28px;
+        font-style: italic;
+        color: #eb7756;
+    }
+    body {
+        overflow: hidden; /* Hides both vertical and horizontal scrollbars and prevents scrolling */
     }
