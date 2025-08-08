@@ -14,39 +14,20 @@ style
         position: relative;
     }
     .LOGODIV 
-    {
-        
-        margin-top: 10px;
+    {  
+        margin-top: 0px;
         margin-left: 10px;
         color:#1a3827;
-        font-size: 30px;
+        font-size: 33px;
         font-family: "Abril Fatface", serif;
     }
-    .FREEDIV
+    .Logopic
     {
         position:absolute;
-        top:733px;
-        margin-left: 40px;
-        font-size: 30px;
-        font-family: "Hi Melody", sans-serif;
-        border-radius: 25px;
-        background: #1a3827; 
-        width: 115px;
-        height: 40px;
-        border-style: none;
-    }
-    .BUSYDIV
-    {
-        position:absolute;
-        top:733px;
-        margin-left: 180px;
-        font-size: 30px;
-        font-family: "Hi Melody", sans-serif;
-        border-radius: 30px;
-        background: #1a3827; 
-        width: 115px;
-        height: 40px;
-        border-style: none;
+        width:85px;
+        height:85px;
+        top:10px;
+        left: 240px;
     }
     .WEEKLYDIV, .MONTHLYDIV {
         position: relative;
@@ -69,22 +50,53 @@ style
     .MONTHLYDIV {
         background: #1a3827;   /* green */
         color: #feffee;        /* white text */
+        border: 2px, solid #feffee;
     }
     
     /* Active state swaps colors */
-    .active-weekly {
+    .active1 {
         background: #feffee !important;
         color: #1a3827 !important;
     }
-    .active-monthly {
-        background: #feffee !important;
-        color: #1a3827 !important;
-    }
-    .inactive-green {
+
+    .inactive1 {
         background: #1a3827 !important;
         color: #feffee !important;
         border: 2px, solid #feffee;
-    }        
+    }  
+    
+    .FREEDIV, .BUSYDIV {
+        position: absolute;
+        top:733px;
+        font-size: 30px;
+        font-family: "Hi Melody", sans-serif;
+        border-radius: 25px;
+        background: #1a3827;
+        color:#feffee;
+        width: 115px;
+        height: 40px;
+        border-style: none;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .FREEDIV
+    {
+        left:40px;
+    }
+    .BUSYDIV
+    {
+        left:180px;
+    }
+
+    .active2 {
+        background: #feffee !important;
+        color: #1a3827 !important;
+        border: 2px, solid #1a3827;
+    }
+    .inactive2 {
+        background: #1a3827 !important;
+        color: #feffee !important;
+    }
     .l1 
     {
         border: 1px solid #1a3827;
@@ -165,6 +177,40 @@ style
         font-size: 28px;
         font-style: italic;
         color: #eb7756;
+    }
+
+    .studyplanner
+    {
+        position:absolute;
+        left:22.5px;
+        top:110px;
+        height:auto;
+        width: 300px; /* keeps aspect ratio */
+    }
+    .subjectfont
+    {
+        font-family: "Caveat", cursive;
+        font-size: 30px;
+        color: #1a3b27;
+    }
+    .plannersubjects
+    {
+        position: absolute;
+        top:180px;
+        left:50px;
+    }
+    .routinedv
+    {
+        position:absolute;
+        top:18px;
+        left:1167px;
+        color: #feffee;
+        background-color: #1a3827;
+        border: none;
+        font-family: "Coming Soon", cursive;
+        text-align: left;
+        white-space: normal;
+        word-wrap: break-word;
     }
     body {
         overflow: hidden; /* Hides both vertical and horizontal scrollbars and prevents scrolling */

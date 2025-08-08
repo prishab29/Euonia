@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap">
         <link rel="stylesheet" href="file:///Users/prisha_bhandari/css/style.css">
     </head>
 <body style="background-color:#feffee;">
@@ -13,51 +14,47 @@
         <h1 style=margin:0;><i><b>Euonia</b></i></h1>
     </div>
     <div class="LOGOIMGDIV">
-        <img
-        src="file:///Users/prisha_bhandari/Desktop/Logo.png"
-        width="85"
-        height="85"
-        />
+        <img src="file:///Users/prisha_bhandari/Desktop/Logo.png" class="Logopic"/>
     </div>
     
-    <table style="width: 1096px; table-layout: fixed; margin-left: 353px; margin-top: 50px; border-collapse: collapse; color:#1a3827; background-color: #1a3827;">
+    <table style="width: 1096px; table-layout: fixed; margin-left: 353px; margin-top: 134px; border-collapse: collapse; color:#1a3827; background-color: #1a3827;">
         
         <tr>
-            <th class="MONTHNAMEDIV" style="width:1000px; color:#feffee">October 2025
-            <button id="weeklyBtn" class="WEEKLYDIV active-weekly">WEEKLY</button>
-            <button id="monthlyBtn" class="MONTHLYDIV inactive-green">MONTHLY</button>
+            <th class="MONTHNAMEDIV" style="width:1000px; color:#feffee">October 2025 < >
+            <button id="weeklyBtn" class="WEEKLYDIV active1">WEEKLY</button>
+            <button id="monthlyBtn" class="MONTHLYDIV inactive1">MONTHLY</button>
             <img id="monthlyImage" src="file:///Users/prisha_bhandari/Desktop/MONTHLY.png" style="position: absolute; display:none; margin-left:-10px;margin-top:-65px; height:629.5px;width:1094px;object-fit: cover; z-index: 9999; pointer-events: none;">
 
         </th>
         <script>
-            function setActive(type) {
+            function setActive1(type) {
                 const weekly = document.getElementById("weeklyBtn");
                 const monthly = document.getElementById("monthlyBtn");
                 const image = document.getElementById("monthlyImage");
             
                 if (type === "weekly") {
                     // Color swap
-                    weekly.classList.add("active-weekly");
-                    weekly.classList.remove("inactive-green");
-                    monthly.classList.add("inactive-green");
-                    monthly.classList.remove("active-monthly");
+                    weekly.classList.add("active1");
+                    weekly.classList.remove("inactive1");
+                    monthly.classList.add("inactive1");
+                    monthly.classList.remove("active1");
             
                     // Hide image when WEEKLY is clicked
                     image.style.display = "none";
                 } else {
                     // Color swap
-                    monthly.classList.add("active-monthly");
-                    monthly.classList.remove("inactive-green");
-                    weekly.classList.add("inactive-green");
-                    weekly.classList.remove("active-weekly");
+                    monthly.classList.add("active1");
+                    monthly.classList.remove("inactive1");
+                    weekly.classList.add("inactive1");
+                    weekly.classList.remove("active1");
             
                     // Show image when MONTHLY is clicked
                     image.style.display = "block";
                 }
             }
             
-            document.getElementById("weeklyBtn").onclick = () => setActive("weekly");
-            document.getElementById("monthlyBtn").onclick = () => setActive("monthly");
+            document.getElementById("weeklyBtn").onclick = () => setActive1("weekly");
+            document.getElementById("monthlyBtn").onclick = () => setActive1("monthly");
         </script>
                                        
         </tr>
@@ -68,12 +65,12 @@
             <th style="text-align: center;">Monday</th>
         </tr>
     </table>
-    <table style="height:80px ;width: 1096px; table-layout: fixed; margin-left: 353px; margin-top: -1px; border-collapse: collapse; background-color:#c2e4f4">
+    <table style="height:80px ;width: 1096px; table-layout: fixed; margin-left: 353px; margin-top: -1px; border-collapse: collapse; background-color:#b4e4ce">
         <tr>
             <th style="width:50px ;left:12px">30</th>
             <th style="text-align: center; width:120px;">Tuesday</th>
-            <th style> Dentist Appointment, 5-6pm</th>
-            <th style> Math Tution, 7-8:30pm</th>
+            <th> Dentist Appointment, 5-6pm</th>
+            <th> Math Tution, 7-8:30pm</th>
         </tr>
     </table>
     <table style="height:80px ;width: 1096px; table-layout: fixed; margin-left: 353px; margin-top: -1px; border-collapse: collapse;">
@@ -107,8 +104,41 @@
             <th style="text-align: center;">Sunday</th>
         </tr>
     </table>
-    <button class="FREEDIV" style="color:#feffee">FREE</button>
-    <button class="BUSYDIV" style="color:#feffee;">BUSY</button>
+    <button id="freeBtn" class="FREEDIV inactive2" >FREE</button>
+    <img id="freeImg"src="file:///Users/prisha_bhandari/Downloads/freee.png" style="position: absolute; top:420px; width:325px; height: auto;object-fit: cover; z-index: 9999; pointer-events: none; display:none;">
+    <button id="busyBtn" class="BUSYDIV inactive2" >BUSY</button>
+    <img id="busyImg"src="file:///Users/prisha_bhandari/Downloads/busyy.png" style="position: absolute; top:420px; width:325px; height: auto;object-fit: cover; z-index: 9999; pointer-events: none; display:none;">
+    <script>
+        function setActive2(type) {
+            const free = document.getElementById("freeBtn");
+            const busy = document.getElementById("busyBtn");
+            const FImg = document.getElementById("freeImg");
+            const BImg = document.getElementById("busyImg")
+        
+            if (type === "free") {
+                free.classList.add("active2");
+                free.classList.remove("inactive2");
+        
+                busy.classList.add("inactive2");
+                busy.classList.remove("active2");
+                
+                FImg.style.display = "block";
+                BImg.style.display = "none";
+            } else {
+                busy.classList.add("active2");
+                busy.classList.remove("inactive2");
+        
+                free.classList.add("inactive2");
+                free.classList.remove("active2");
+
+                FImg.style.display = "none";
+                BImg.style.display = "block";
+            }
+        }
+        document.getElementById("freeBtn").onclick = () => setActive2("free");
+        document.getElementById("busyBtn").onclick = () => setActive2("busy");
+    </script>
+        
     </div>  
     <div class="l1"></div>
     <div class="circle-outline" style="left: 379px; top: 331px;"></div>
@@ -123,6 +153,85 @@
     </div>
     <div class="priority2">
         <p style="margin:0;">- HIGH</p>
+    </div>
+    <img src="file:///Users/prisha_bhandari/Desktop/Screenshot%202025-08-07%20at%207.47.02%E2%80%AFPM.png" class="studyplanner">
+    
+    <div class="subjectfont">
+        <p class="plannersubjects"; style="margin:0;">COMPUTER SCIENCE</p>
+    </div>
+    <div style="position:absolute; width:200px;left:22.5px;top:200px;">
+        <label style="position:absolute;left:210px;top:15px;font-family: Hi Melody, sans-serif;font-size: 22px;"><span id="CompSHours">0</span>/7</label>
+         <div style="position:relative;top:18px;background:#feffee;border: 1px solid, #000000;border-radius:8px;overflow:hidden;">
+           <div id="CompSBar" style="height:13px;background:#edb07e;width:0%;"></div>
+         </div>
+         <button onclick="addHourCompS('CompS')"; style="position:absolute;top:-11px;width:23px;height:23px;border:1px solid, #000000;border-radius: 15px;background-color: #feffee;">+</button>
+    </div>
+
+    <div class="subjectfont">
+        <p class="plannersubjects"; style="margin:0; top:260px;">FRENCH</p>
+    </div>
+    <div style="position:absolute; width:200px;left:22.5px;top:280px;">
+        <label style="position:absolute;left:210px;top:15px;font-family: Hi Melody, sans-serif;font-size: 22px;"><span id="frenchHours">0</span>/6</label>
+        <div style="position:relative;top:18px;background:#feffee;border: 1px solid, #000000;border-radius:8px;overflow:hidden;">
+          <div id="frenchBar" style="height:13px;background:#67beef;width:0%;"></div>
+        </div>
+        <button onclick="addHourFrench('french')"; style="position:absolute;top:-11px;width:23px;height:23px;border:1px solid, #000000;border-radius: 15px;background-color: #feffee;">+</button>
+   </div>
+  
+    <div class="subjectfont">
+        <p class="plannersubjects"; style="margin:0; top: 340px;">MATHS</p>
+    </div>
+    <div style="position:absolute; width:200px;left:22.5px;top:360px;">
+         <label style="position:absolute;left:210px;top:15px;font-family: Hi Melody, sans-serif;font-size: 22px;"><span id="mathHours">0</span>/8</label>
+         <div style="position:relative;top:18px;background:#feffee;border: 1px solid, #000000;border-radius:8px;overflow:hidden;">
+           <div id="mathBar" style="height:13px;background:#f58686;width:0%;"></div>
+         </div>
+         <button onclick="addHourMath('math')"; style="position:absolute;top:-11px;width:23px;height:23px;border:1px solid, #000000;border-radius: 15px;background-color: #feffee;">+</button>
+    </div>
+
+    <script>
+        function addHourCompS(subject) {
+            let hoursEl = document.getElementById(subject + 'Hours');
+            let barEl = document.getElementById(subject + 'Bar');
+            let maxHours = 7;
+            let current = parseInt(hoursEl.textContent);
+            let newHours = Math.min(maxHours, Math.max(0, current + 1));
+            hoursEl.textContent = newHours;
+            let percent = (newHours / maxHours) * 100;
+            barEl.style.width = percent + '%';
+        }
+    
+        function addHourFrench(subject) {
+            let hoursEl = document.getElementById(subject + 'Hours');
+            let barEl = document.getElementById(subject + 'Bar');
+            let maxHours = 6;
+            let current = parseInt(hoursEl.textContent);
+            let newHours = Math.min(maxHours, Math.max(0, current + 1));
+            hoursEl.textContent = newHours;
+            let percent = (newHours / maxHours) * 100;
+            barEl.style.width = percent + '%';
+        }
+    
+        function addHourMath(subject) {
+            let hoursEl = document.getElementById(subject + 'Hours');
+            let barEl = document.getElementById(subject + 'Bar');
+            let maxHours = 8;
+            let current = parseInt(hoursEl.textContent);
+            let newHours = Math.min(maxHours, Math.max(0, current + 1));
+            hoursEl.textContent = newHours;
+            let percent = (newHours / maxHours) * 100;
+            barEl.style.width = percent + '%';
+        }
+    </script>
+    <div class="routinedv">
+        <table>
+            <td style="border: 1px solid, #edb07e; font-size: 17px;">
+            <p style="margin:0;">Daily Routine:</p>
+            <p style="margin:0;">7am-8am - Wake up + Get ready</p>
+            <p style="margin:0;">8am-4:30pm - School</p>
+            <p style="margin:0;">10:30pm - Sleep</p>
+            </td>
+        </table> 
     </div>
 </body>
 </html>
