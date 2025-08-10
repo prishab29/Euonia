@@ -227,7 +227,7 @@
     <div class="priority2">
         <p style="margin:0;">- HIGH</p>
     </div>
-    <img src="file:///Users/prisha_bhandari/Desktop/Screenshot%202025-08-07%20at%207.47.02%E2%80%AFPM.png" class="studyplanner">
+    <img src="file:///Users/prisha_bhandari/Desktop/Bannerr.png" class="studyplanner">
     
     <div class="subjectfont">
         <p class="plannersubjects"; style="margin:0;">COMPUTER SCIENCE</p>
@@ -306,5 +306,23 @@
             </td>
         </table> 
     </div>
+    <img src="file:///Users/prisha_bhandari/Downloads/Add%20event.png" style="position: absolute; height:50px; width:auto; object-fit: cover; z-index: 9999; pointer-events: none;top:168px;left:377px;">
+    <img id="event" src="file:///Users/prisha_bhandari/Desktop/Code/eventeime.png"
+     style="display:none;position: absolute; height:200px; width:auto; object-fit: cover; z-index: 9999; top:178px; left:787px;">
+
+    <div id="eventBtn" 
+        style="position: absolute; left:781.5px; top:178px; height:26px; width:26px; border-radius:14px; z-index: 10000; background-color: rgba(0, 0, 0, 0); cursor: pointer;">
+    </div>
+
+    <script>
+        const btn = document.getElementById("eventBtn");
+        const img = document.getElementById("event");
+
+        btn.addEventListener("click", () => {
+            img.style.display = (img.style.display === "none" || img.style.display === "")
+                ? "block"
+                : "none";
+        });
+    </script>
 </body>
 </html>
