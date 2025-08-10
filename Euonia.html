@@ -20,43 +20,111 @@
     <table style="width: 1096px; table-layout: fixed; margin-left: 353px; margin-top: 134px; border-collapse: collapse; color:#1a3827; background-color: #1a3827;">
         
         <tr>
-            <th class="MONTHNAMEDIV" style="width:1000px; color:#feffee">October 2025 < >
-            <button id="weeklyBtn" class="WEEKLYDIV active1">WEEKLY</button>
-            <button id="monthlyBtn" class="MONTHLYDIV inactive1">MONTHLY</button>
-            <img id="monthlyImage" src="file:///Users/prisha_bhandari/Desktop/MONTHLY.png" style="position: absolute; display:none; margin-left:-10px;margin-top:-65px; height:629.5px;width:1094px;object-fit: cover; z-index: 9999; pointer-events: none;">
-
-        </th>
-        <script>
-            function setActive1(type) {
-                const weekly = document.getElementById("weeklyBtn");
-                const monthly = document.getElementById("monthlyBtn");
-                const image = document.getElementById("monthlyImage");
+            <th class="MONTHNAMEDIV" style="width:1000px; color:#feffee">
+                October 2025 < >
+                <button id="weeklyBtn" class="WEEKLYDIV active1">WEEKLY</button>
+                <button id="monthlyBtn" class="MONTHLYDIV inactive1">MONTHLY</button>
             
-                if (type === "weekly") {
-                    // Color swap
+                <img id="monthlyImage" 
+                     src="file:///Users/prisha_bhandari/Desktop/MONTHLY.png" 
+                     style="position: absolute; display:none; margin-left:-10px; margin-top:-65px; height:629.5px; width:1094px; object-fit: cover; z-index: 9999; pointer-events: none;">
+            
+                
+                <div id="backgroundClickArea" 
+                     style="position: absolute; top:74px;left:-1px; height:551px; width:1092px; z-index: 10000; background-color: rgba(255,255,255,0);;cursor: pointer;display:none;">
+                </div>
+                <div id="monthlyClickArea">
+                    <div id="20/10/25" style="position: absolute; display:none; left:-1px; top:426px; height:98px; width:153px; z-index: 10000; background-color: rgba(255,255,255,0); cursor: pointer;"></div>
+                    <div id="7/10/25" style="position: absolute; display:none; left:154px; top:225.5px; height:98px; width:155px; z-index: 10000; background-color: rgba(255,255,255,0); cursor: pointer;"></div>
+                    <div id="2/10/25" style="position: absolute; display:none; left:467.5px; top:125.5px; height:98px; width:154px; z-index: 10000; background-color: rgba(255,255,255,0); cursor: pointer;"></div>
+                    <div id="16/10/25" style="position: absolute; display:none; left:468px; top:326px; height:98px; width:154px; z-index: 10000; background-color: rgba(255,255,255,0); cursor: pointer;"></div>
+                    <div id="30/09/25" style="position: absolute; display:none; left:154px; top:125.5px; height:97px; width:155px; z-index: 10000; background-color: rgba(255,255,255,0); cursor: pointer;"></div>             
+                </div>
+                
+            </th>
+            
+            <script>
+                // Switch between weekly and monthly views
+                function setActive1(type) {
+                  const weekly = document.getElementById("weeklyBtn");
+                  const monthly = document.getElementById("monthlyBtn");
+                  const monthlyImage = document.getElementById("monthlyImage");
+                  const monthlyClickArea = document.getElementById("monthlyClickArea");
+                  const backgroundClickArea = document.getElementById("backgroundClickArea");
+                  const scheduleImageIds = ["two", "seven", "sixteen", "twenty", "other"];
+              
+                  if (type === "weekly") {
                     weekly.classList.add("active1");
                     weekly.classList.remove("inactive1");
                     monthly.classList.add("inactive1");
                     monthly.classList.remove("active1");
-            
-                    // Hide image when WEEKLY is clicked
-                    image.style.display = "none";
-                } else {
-                    // Color swap
+              
+                    monthlyImage.style.display = "none";
+                    monthlyClickArea.style.display = "none";
+                    monthlyClickArea.querySelectorAll("div").forEach(div => div.style.display = "none");
+                    backgroundClickArea.style.display = "none";
+
+                    scheduleImageIds.forEach(id => {
+                        const img = document.getElementById(id);
+                        if (img) img.style.display = "none";
+                    });
+                  } else {
                     monthly.classList.add("active1");
                     monthly.classList.remove("inactive1");
                     weekly.classList.add("inactive1");
                     weekly.classList.remove("active1");
-            
-                    // Show image when MONTHLY is clicked
-                    image.style.display = "block";
+              
+                    monthlyImage.style.display = "block";
+                    monthlyClickArea.style.display = "block";
+                    monthlyClickArea.querySelectorAll("div").forEach(div => div.style.display = "block");
+                    backgroundClickArea.style.display = "block";
+                    
+                  }
                 }
-            }
-            
-            document.getElementById("weeklyBtn").onclick = () => setActive1("weekly");
-            document.getElementById("monthlyBtn").onclick = () => setActive1("monthly");
-        </script>
-                                       
+              
+                function showScheduleImage(imageId, clickedElement) {
+                  document.querySelectorAll(".routine img").forEach(img => {
+                    img.style.display = "none";
+                  });
+              
+                  if (imageId) {
+                    const img = document.getElementById(imageId);
+                    if (img) img.style.display = "block";
+                  }
+              
+                  document.querySelectorAll("#monthlyClickArea > div").forEach(area => {
+                    area.style.border = "none";
+                  });
+              
+                  if (clickedElement.id !== "backgroundClickArea") {
+                    clickedElement.style.border = "2px solid, #b4e4ce";
+                    }
+                }
+              
+                document.getElementById("2/10/25").addEventListener("click", function() {
+                  showScheduleImage("two", this);
+                });
+                document.getElementById("7/10/25").addEventListener("click", function() {
+                  showScheduleImage("seven", this);
+                });
+                document.getElementById("16/10/25").addEventListener("click", function() {
+                  showScheduleImage("sixteen", this);
+                });
+                document.getElementById("20/10/25").addEventListener("click", function() {
+                  showScheduleImage("twenty", this);
+                });
+                document.getElementById("backgroundClickArea").addEventListener("click", function() {
+                    showScheduleImage("other", this);
+                });
+                document.getElementById("30/09/25").addEventListener("click", function() {
+                  showScheduleImage(null, this);
+                });
+              
+                document.getElementById("weeklyBtn").onclick = () => setActive1("weekly");
+                document.getElementById("monthlyBtn").onclick = () => setActive1("monthly");
+              </script>
+              
+                                  
         </tr>
     </table>
     <table style="height:80px ;width: 1096px; table-layout: fixed; margin-left: 353px; margin-top: -1px; border-collapse: collapse;">
@@ -105,9 +173,9 @@
         </tr>
     </table>
     <button id="freeBtn" class="FREEDIV inactive2" >FREE</button>
-    <img id="freeImg"src="file:///Users/prisha_bhandari/Downloads/freee.png" style="position: absolute; top:420px; width:325px; height: auto;object-fit: cover; z-index: 9999; pointer-events: none; display:none;">
+    <img id="freeImg"src="file:///Users/prisha_bhandari/Downloads/freee.png" style="position: absolute;left:50px;top:470px; width:225px; height: auto;object-fit: cover; z-index: 9999; pointer-events: none; display:none;">
     <button id="busyBtn" class="BUSYDIV inactive2" >BUSY</button>
-    <img id="busyImg"src="file:///Users/prisha_bhandari/Downloads/busyy.png" style="position: absolute; top:420px; width:325px; height: auto;object-fit: cover; z-index: 9999; pointer-events: none; display:none;">
+    <img id="busyImg"src="file:///Users/prisha_bhandari/Downloads/busyy.png" style="position: absolute;left:50px;top:470px; width:225px; height: auto;object-fit: cover; z-index: 9999; pointer-events: none; display:none;">
     <script>
         function setActive2(type) {
             const free = document.getElementById("freeBtn");
@@ -138,7 +206,6 @@
         document.getElementById("freeBtn").onclick = () => setActive2("free");
         document.getElementById("busyBtn").onclick = () => setActive2("busy");
     </script>
-        
     </div>  
     <div class="l1"></div>
     <div class="circle-outline" style="left: 379px; top: 331px;"></div>
@@ -147,7 +214,13 @@
         <p style="margin:0;">Schedule:~</p>
         <p style="margin:0;">1.) Dentist Appointment, 5-6pm</p>
         <p style="margin:0;">2.) Math Tution, 7-8:30pm</p>
+        <img id="two" src="file:///Users/prisha_bhandari/Desktop/2Oct.png" style="position:absolute;height:124px;top:2px;left:-2px;display:none;object-fit: cover; z-index: 9999; pointer-events: none;">
+        <img id="seven" src="file:///Users/prisha_bhandari/Desktop/7Oct.png" style="position:absolute;height:124px;top:2px;left:-2px;display:none;object-fit: cover; z-index: 9999; pointer-events: none;">
+        <img id="sixteen" src="file:///Users/prisha_bhandari/Desktop/16Oct.png" style="position:absolute;height:124px;top:2px;left:-2px;display:none;object-fit: cover; z-index: 9999; pointer-events: none;">
+        <img id="twenty" src="file:///Users/prisha_bhandari/Desktop/20Oct.png" style="position:absolute;height:124px;top:2px;left:-2px;display:none;object-fit: cover; z-index: 9999; pointer-events: none;">
+        <img id="other" src="file:///Users/prisha_bhandari/Desktop/Others.png" style="position:absolute;height:125px;top:5px;left:-1px;display:none;object-fit: cover; z-index: 9999; pointer-events: none;">
     </div>
+    
     <div class="priority1">
         <p style="margin:0;">- LOW</p>
     </div>

@@ -151,7 +151,7 @@ style
     .routine
     {
         position: absolute;
-        top:20px;
+        top:19px;
         left:370px;
         font-family: "Coming Soon", cursive;
         font-size: 28px;
@@ -192,6 +192,7 @@ style
         font-family: "Caveat", cursive;
         font-size: 30px;
         color: #1a3b27;
+        font-weight: bold;
     }
     .plannersubjects
     {
